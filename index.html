@@ -67,5 +67,26 @@
         </tr>
         <hr>
     </table>
+    <hr>
+    <h1> Code Display </h1>
+    <blockquote>In computer science, a disjoint-set data structure, also called a union–find data structure or merge–find set, is a data structure that stores a collection of disjoint (non-overlapping) sets. Equivalently, it stores a partition of a set into disjoint subsets. It provides operations for adding new sets, merging sets (replacing them by their union), and finding a representative member of a set. The last operation allows to find out efficiently if any two elements are in the same or different sets.</blockquote>
+    <pre>
+        void make_set(int v) {
+            parent[v] = v;
+        }
+        
+        int find_set(int v) {
+            if (v == parent[v])
+                return v;
+            return find_set(parent[v]);
+        }
+        
+        void union_sets(int a, int b) {
+            a = find_set(a);
+            b = find_set(b);
+            if (a != b)
+                parent[b] = a;
+        }
+    </pre>
 </body>
 </html>
